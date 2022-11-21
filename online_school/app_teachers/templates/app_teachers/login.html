@@ -1,0 +1,9 @@
+{% extends "login_pattern.html" %}
+{% block body %}
+    <form method="post" action="{% url 'teachers:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Войти</button>
+    </form>
+    <a href="{% url 'students:login' %}">Я студент</a>
+{% endblock %}
